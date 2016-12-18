@@ -31,3 +31,51 @@ int main(void)
 }
 
 ,,,,,,,,,,,,,,,,,,,,
+,,,,,,,,,,,,,,,,,,,,(recursion)
+
+#include<stdio.h>
+
+
+int n=10;
+int b[10]={4,7,1,5,15,12,9,6,3,8};
+int main()
+{
+    
+    
+    for(i=n/2;i>=0;i--)
+    {
+        adjust(b,i);
+    }
+    for(i=0;i<n;i++)
+    {
+        printf("%3d\t",b[i]);
+    }
+    return 0;
+}
+
+
+void adjust(int *a, int i)
+{
+    int l,r,smallest,temp;
+    l=2*i+1;
+    r=2*i+2;
+    if(l<n && a[l]>a[i])
+    {
+        smallest=l;
+    }
+    else
+    {
+        smallest=i;
+    }
+    if(r<n && a[r]>a[smallest])
+    {
+        smallest=r;
+    }
+    if(smallest!=i)
+    {
+        temp=a[i];
+        a[i]=a[smallest];
+        a[smallest]=temp;
+        adjust(a,smallest);
+    }
+}
