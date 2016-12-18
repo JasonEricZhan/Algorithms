@@ -1,3 +1,4 @@
+,,,,,,,,,,,,,,,,,,,,,(iteration)
 #include <stdio.h>
 
 void adjust(int*a ,int r ,int n)
@@ -28,3 +29,5 @@ int main(void)
         printf("%3d",b[i])  ;
     return 0;
 }
+
+,,,,,,,,,,,,,,,,,,,,
