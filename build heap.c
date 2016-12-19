@@ -7,7 +7,7 @@ void adjust(int*a ,int r ,int n)
    int j;
     for(j=r*2;j<=n;j=j*2)
     {
-        if (a[j]<a[j+1]&& j<10 ) j++;
+        if (a[j]<a[j+1]&& j<10 ) j++;   ///junp out of range n may make a mistake
         if(k>a[j])
             break;
         else
@@ -48,7 +48,7 @@ int main()
     }
     for(i=0;i<n;i++)
     {
-        printf("%3d\t",b[i]);
+        printf("%3d\t",b[i]);     ///  \t  is tab
     }
     return 0;
 }
@@ -57,7 +57,7 @@ int main()
 void adjust(int *a, int i)
 {
     int l,r,smallest,temp;
-    l=2*i+1;
+    l=2*i+1;                      ///coordinate
     r=2*i+2;
     if(l<n && a[l]>a[i])
     {
