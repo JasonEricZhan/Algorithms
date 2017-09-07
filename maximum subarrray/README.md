@@ -1,18 +1,13 @@
 
-What I learned from the book , class or otherplace and try to change it to make it better
+# Maximum subarrray problem solving by Divide and Conquer
 
-<b>1. Building Heap.c (iteration & recursion)</b>
+There is an additional rule:
 
+The maximum subarray can only have one negative integar
 
-<b> 2.maximum subarrray: Using Divide and Conquer to solve Maximum subarray problem</b>
+EX:
 
-*with the rule that only one negative integar can be put in the subarray
+Given 2 3 4 -1 -2 10 -7
 
+The normal solution 2 3 4 -1 -2 10 is illegal, so the answer is 10
 
-<b> 3.flattest_lowest_hillclimbing: Using Dynamic Progamming to solve Hill climbing problem</b>
-
-*find the lowest cost path
-
-<b> 4.sudoku: Using Backtracking(DFS) to solve Sudoku problem</b>
-
-*the data is read by a line of string, 0 means empty
