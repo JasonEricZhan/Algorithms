@@ -16,10 +16,12 @@ Data input:
 
 1.first one is number N means NXN board
 
-2.The height of every point, (row , column)
+2.The height of every point, coordinates is (row , column)
 ie:
 
 (0,0) ,(0,1), (0,2).......(N,N-1) ,(N,N)
+
+scan by this order
 
 Ex: 6X6 board
 
@@ -30,3 +32,7 @@ Ex: 6X6 board
 19 20 21 22 23 24 
 25 26 27 28 29 30 
 31 32 33 34 35 36 
+
+
+Output:
+lowest cost and the path represent by coordinate
