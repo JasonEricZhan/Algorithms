@@ -1,5 +1,12 @@
 # flattest and lowest hill climbing problem solved by Dynamic Programming
 
+There are two rules:
+
+1.Every step just can walk to adjacent point, and can't go back, so there is three directions:horizon, vertical, diagonal.
+
+2.Path must in the slope of 1/2~2, and can't go out the region make by four lines(two lines slope are 1/2,two lines slope are 2), otherwise it's illegal.
+
+
 Everytime walk from one point to another and count:
    
 If going horizon or vertical only have to cost the energy: 
@@ -13,6 +20,7 @@ If going diagonal direction, then have to cost the energy:
 _Note:Coordinate of each point is represented by (row , column)_
 
 Step by step to find the lowest cost path from (0,0) to (N,N)
+
 
 
 <b> Data input</b>:
