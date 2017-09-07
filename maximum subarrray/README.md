@@ -2,7 +2,7 @@
 # Maximum subarrray problem solved by Divide and Conquer
 
 
-There is an additional rule:
+<b>There is an additional rule:</b>
 
 The maximum subarray can only have one negative integar
 
