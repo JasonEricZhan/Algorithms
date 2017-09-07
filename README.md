@@ -8,6 +8,6 @@ A little tricky of for loop.In c you have to notice the value of index to preven
 
 <b> 2.Using Divide and Conquer to solve Max subarray summation</b>
 
-*with rule that only one positive integar can be put in the subarray
+*with the rule that only one negative integar can be put in the subarray
 
 
