@@ -16,7 +16,7 @@ Data input:
 
 1.first one is number N means NXN board
 
-2.The height of every point, coordinates is (row , column)
+2.The height of every point, its coordinate is represented by (row , column)
 ie:
 
 (0,0) ,(0,1), (0,2).......(N,N-1) ,(N,N)
@@ -36,4 +36,4 @@ Ex: 6X6 board
 
 Output:
 
-lowest cost and the path represent by coordinate
+lowest cost and the path represent by coordinates
