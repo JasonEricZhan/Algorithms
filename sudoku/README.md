@@ -1,4 +1,4 @@
-#Sudoku solving by backtracking technic
+# Sudoku solving by backtracking technic
 
 1.read the data string
 Ex:
