@@ -7,7 +7,7 @@ The maximum subarray can only have one negative integar
 
 EX:
 
-Given 2 3 4 -1 -2 10 -7
+Given 2 3 4 -1 -2 11 -7
 
-The normal solution 2 3 4 -1 -2 10 is illegal, so the answer is 10
+The normal solution 2 3 4 -1 -2 11 is illegal, so the answer is 11
 
