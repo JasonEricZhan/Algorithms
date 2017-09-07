@@ -1,13 +1,13 @@
 # flattest and lowest hill climbing problem solved by Dynamic Programming
 
-There are two rules:
+<b>There are two rules</b>:
 
 1.Every step just can walk to adjacent point, and can't go back, so there is three directions:horizon, vertical, diagonal.
 
 2.Path must in the slope of 1/2~2, and can't go out the diamond shaped region made by four lines(two lines slope are 1/2,two lines slope are 2), otherwise it's illegal.
 
 
-Everytime walk from one point to another and count:
+<b>Everytime walk from one point to another and count</b>:
    
 If going horizon or vertical only have to cost the energy: 
 
