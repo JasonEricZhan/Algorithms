@@ -4,7 +4,7 @@ There are two rules:
 
 1.Every step just can walk to adjacent point, and can't go back, so there is three directions:horizon, vertical, diagonal.
 
-2.Path must in the slope of 1/2~2, and can't go out the region make by four lines(two lines slope are 1/2,two lines slope are 2), otherwise it's illegal.
+2.Path must in the slope of 1/2~2, and can't go out the diamond shaped region make by four lines(two lines slope are 1/2,two lines slope are 2), otherwise it's illegal.
 
 
 Everytime walk from one point to another and count:
