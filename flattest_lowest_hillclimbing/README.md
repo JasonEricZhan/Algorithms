@@ -27,7 +27,7 @@ Step by step to find the lowest cost path from (0,0) to (N,N)
 
 1.first one is number N means NXN board
 
-2.The heights of every point, and are scanned by sequential order,
+2.The heights of every point(Asume nonnegative), and are scanned by sequential order,
 ie:
 
 (0,0) ,(0,1), (0,2).......(N,N-1) ,(N,N)
