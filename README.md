@@ -11,3 +11,6 @@ A little tricky of for loop.In c you have to notice the value of index to preven
 *with the rule that only one negative integar can be put in the subarray
 
 
+<b> 3.Using Dynamic progamming to solve Hill climbing problem</b>
+
+*with lowest cost path
