@@ -1,5 +1,5 @@
 # Algorithms
-What I learned from the book or otherplace and try to change it to make it better
+What I learned from the book , class or otherplace and try to change it to make it better
 
 <b>1. Building Heap of bottom up (iteration)</b>
 
