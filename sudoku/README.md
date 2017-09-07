@@ -15,4 +15,4 @@ Ex: the solution of above question is
 
 ![image](https://github.com/JasonEricZhan/Algorithms/blob/master/sudoku/solution.png)
 
-_Note: this program will print out all the solution_
+_Note: this program will print out all the solutions_
