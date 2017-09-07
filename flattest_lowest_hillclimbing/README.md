@@ -1,4 +1,4 @@
-# flattest and lowest hill climbing problem solving by Dynamic Programming
+# flattest and lowest hill climbing problem solved by Dynamic Programming
 
 Everytime walk from one point to another and count:
    
