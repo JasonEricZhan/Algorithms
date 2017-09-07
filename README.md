@@ -11,7 +11,7 @@ What I learned from the book , class or otherplace and try to change it to make 
 
 <b> 3.flattest_lowest_hillclimbing: Using Dynamic Progamming to solve Hill climbing problem</b>
 
-*with lowest cost path
+*find the lowest cost path
 
 <b> 4.sudoku.cpp: Using Backtracking(DFS) to solve Sudoku problem</b>
 
