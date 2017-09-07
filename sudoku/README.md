@@ -1,4 +1,4 @@
-# Sudoku solving by backtracking technic
+# Sudoku solved by backtracking technic
 
 Solve the 9X9 Sudoku by backtracking technic, and this progam will print out all the solutions, because backtracking algorithm can find out all the legal solutions.
 
