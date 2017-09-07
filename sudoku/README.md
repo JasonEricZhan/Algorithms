@@ -14,3 +14,5 @@ However, the output print the whole board of Sudoku, not a string
 Ex: the solution of above question is
 
 ![image](https://github.com/JasonEricZhan/Algorithms/blob/master/sudoku/solution.png)
+
+_Note: this program will print out all the solution_
