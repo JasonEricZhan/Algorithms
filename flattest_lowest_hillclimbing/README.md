@@ -13,7 +13,7 @@ If going diagonal direction, then have to cost the energy:
 Step by step to find the lowest cost path
 
 
-*Data input:
+<p>Data input<p/>:
 
 1.first one is number N means NXN board
 
@@ -35,6 +35,6 @@ Ex: 6X6 board
 31 32 33 34 35 36 
 
 
-*Output:
+<p>Output<p/>:
 
 lowest cost and the path represent by coordinates
