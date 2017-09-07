@@ -10,4 +10,4 @@ If going diagonal direction, then have to cost the energy:
 
      start point's hieght + 1.4 * |start point's height - end point's height|
 
-And find the lowest cost path
+Step by step to find the lowest cost path
