@@ -1,5 +1,5 @@
 
-# Maximum subarrray problem solving by Divide and Conquer
+# Maximum subarrray problem solved by Divide and Conquer
 
 
 There is an additional rule:
