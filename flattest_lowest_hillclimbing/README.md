@@ -15,7 +15,8 @@ Step by step to find the lowest cost path
 Data input:
 
 1.first one is number N means NXN board
-2.The height of every point
+
+2.The height of every point, (0,0) ,(0,1), (0,2).......(N,N-1) ,(N,N)
 
 Ex: 6X6 board
 
