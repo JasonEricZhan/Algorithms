@@ -35,4 +35,5 @@ Ex: 6X6 board
 
 
 Output:
+
 lowest cost and the path represent by coordinate
