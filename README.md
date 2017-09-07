@@ -4,7 +4,7 @@ What I learned from the book , class or otherplace and try to change it to make 
 <b>1. Building Heap.c (iteration & recursion)</b>
 
 
-<b> 2.maximum_subarrray.c: Using Divide and Conquer to solve Maximum subarray problem</b>
+<b> 2.maximum subarrray: Using Divide and Conquer to solve Maximum subarray problem</b>
 
 *with the rule that only one negative integar can be put in the subarray
 
@@ -13,6 +13,6 @@ What I learned from the book , class or otherplace and try to change it to make 
 
 *find the lowest cost path
 
-<b> 4.sudoku.cpp: Using Backtracking(DFS) to solve Sudoku problem</b>
+<b> 4.sudoku: Using Backtracking(DFS) to solve Sudoku problem</b>
 
 *the data is read by a line of string, 0 means empty
