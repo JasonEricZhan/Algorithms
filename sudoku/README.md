@@ -15,4 +15,4 @@ Ex: the solution of above question is
 
 ![image](https://github.com/JasonEricZhan/Algorithms/blob/master/sudoku/solution.png)
 
-_Note: this program will print out all the solutions_
+_Note: this progam will print out all the solutions, because backtracking algorithm can find out all the legal solutions_
