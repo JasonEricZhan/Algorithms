@@ -1,18 +1,13 @@
-# Algorithms
-What I learned from the book , class or otherplace and try to change it to make it better
+# flattest_lowest_hillclimbing solving by Dynamic Programming
 
-<b>1. Building Heap.c (iteration & recursion)</b>
+Rule:
+Everytime walk from one point to another and count:
+   If going horizon or vertical only have to cost the energy: 
 
+   start point's hieght plus absolute value of two point's height differential
 
-<b> 2.maximum subarrray: Using Divide and Conquer to solve Maximum subarray problem</b>
+   If going diagonal direction, then have to cost the energy: 
 
-*with the rule that only one negative integar can be put in the subarray
+   start point's hieght plus 1.4 muptily absolute value of two point's height differential
 
-
-<b> 3.flattest_lowest_hillclimbing: Using Dynamic Progamming to solve Hill climbing problem</b>
-
-*find the lowest cost path
-
-<b> 4.sudoku: Using Backtracking(DFS) to solve Sudoku problem</b>
-
-*the data is read by a line of string, 0 means empty
+And find the lowest cost path
