@@ -9,10 +9,10 @@ What I learned from the book , class or otherplace and try to change it to make 
 *with the rule that only one negative integar can be put in the subarray
 
 
-<b> 3.flattest_lowest_hillclimbing: Using Dynamic progamming to solve Hill climbing problem</b>
+<b> 3.flattest_lowest_hillclimbing: Using Dynamic Progamming to solve Hill climbing problem</b>
 
 *with lowest cost path
 
-<b> 4.sudoku.cpp: Using Back tracking to solve Sudoku problem</b>
+<b> 4.sudoku.cpp: Using Backtracking(DFS) to solve Sudoku problem</b>
 
 *the data is read by a line of string, 0 means empty
