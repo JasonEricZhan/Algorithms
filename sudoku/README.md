@@ -11,5 +11,6 @@ then the input is:
 
 However, the output print the whole board of Sudoku, not a string
 
-Ex: the solution of above problem is
+Ex: the solution of above question is
 
+![image](https://github.com/JasonEricZhan/Algorithms/blob/master/sudoku/solution.png)
