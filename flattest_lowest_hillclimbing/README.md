@@ -16,7 +16,10 @@ Data input:
 
 1.first one is number N means NXN board
 
-2.The height of every point, (0,0) ,(0,1), (0,2).......(N,N-1) ,(N,N)
+2.The height of every point, (row , column)
+ie:
+
+(0,0) ,(0,1), (0,2).......(N,N-1) ,(N,N)
 
 Ex: 6X6 board
 
