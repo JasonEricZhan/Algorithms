@@ -2,8 +2,12 @@
 
 Solve the 9X9 Sudoku by backtracking technic, and this progam will print out all the solutions, because backtracking algorithm can recursively find out all the legal solutions.
 
-like this:
-https://en.wikipedia.org/wiki/Backtracking
+Whole process like this:
+
+
+![image](https://github.com/JasonEricZhan/Algorithms/blob/master/sudoku/Sudoku_solved_by_bactracking.gif)
+
+_from website:https://en.wikipedia.org/wiki/Backtracking_
 
 <b>Data input</b>:
 
