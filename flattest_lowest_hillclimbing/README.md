@@ -6,7 +6,7 @@
 
 2.Path must in the slope of 1/2~2, and can't go out the diamond shaped region made by four lines(two lines slope are 1/2,two lines slope are 2), otherwise it's illegal.
 
-More detailed example: the diamond formed by red line
+More detailed example: the diamond formed by red line for 3X3 board
 
 ![image](https://github.com/JasonEricZhan/Algorithms/blob/master/flattest_lowest_hillclimbing/example.png)
 
