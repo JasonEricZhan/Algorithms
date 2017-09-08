@@ -1,6 +1,6 @@
 # Sudoku solved by backtracking technic
 
-Solve the 9X9 Sudoku by backtracking technic, and this progam will print out all the solutions, because backtracking algorithm can find out all the legal solutions.
+Solve the 9X9 Sudoku by backtracking technic, and this progam will print out all the solutions, because backtracking algorithm can recursively find out all the legal solutions.
 
 <b>Data input</b>:
 
@@ -10,7 +10,7 @@ Ex:
 
 ![image](https://github.com/JasonEricZhan/Algorithms/blob/master/sudoku/problem.png)
 
-then the input is:
+then the input should be:
 
 040210000807000090200800401300002905005708600706500004501004009060000708000027050
 
