@@ -12,6 +12,8 @@ Ex:
 
 then the input should be:
 
+(from left to right, top to bottom)
+
 040210000807000090200800401300002905005708600706500004501004009060000708000027050
 
 _Note: 0 means empty block_
