@@ -14,6 +14,8 @@ then the input should be:
 
 040210000807000090200800401300002905005708600706500004501004009060000708000027050
 
+_Note: 0 means empty_
+
 However, the output print the whole board of Sudoku, not a string
 
 <b>Output</b>:
