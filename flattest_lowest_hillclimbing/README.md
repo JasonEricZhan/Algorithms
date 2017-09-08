@@ -10,7 +10,7 @@ More detailed example: the diamond formed by red line for 3X3 board
 
 ![image](https://github.com/JasonEricZhan/Algorithms/blob/master/flattest_lowest_hillclimbing/example.png)
 
-_Note: because coordinate value is integar, so there might be some flexibility of solution, because the integar division in c will rounddown all the result to just integar, for example 2.1, 2.2  might be legal_
+_Note: Coordinate value is integar, so there might be some flexibility of the solution, because the integar division in c will rounddown all the results to just integar, for example 2.1, 2.2  might be legal_
 
 <b>Everytime walk from one point to another and count</b>:
    
