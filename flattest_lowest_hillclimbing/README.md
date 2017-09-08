@@ -6,6 +6,11 @@
 
 2.Path must in the slope of 1/2~2, and can't go out the diamond shaped region made by four lines(two lines slope are 1/2,two lines slope are 2), otherwise it's illegal.
 
+EX: the diamond formed by red line
+
+![image](https://github.com/JasonEricZhan/Algorithms/blob/master/flattest_lowest_hillclimbing/example.png)
+
+_Note: because coordinate value is integar, so there might be some flexibility of solution, because the integar division in c will rounddown all the result to just integar_
 
 <b>Everytime walk from one point to another and count</b>:
    
