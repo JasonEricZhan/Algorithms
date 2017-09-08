@@ -1,6 +1,6 @@
 # Sudoku solved by backtracking technique
 
-Solve the 9X9 Sudoku by backtracking technic, and this progam will print out all the solutions, because backtracking algorithm can recursively find out all the legal solutions.
+Solve the 9X9 Sudoku by backtracking technique, and this progam will print out all the solutions, because backtracking algorithm can recursively find out all the legal solutions.
 
 Whole process like this:
 
