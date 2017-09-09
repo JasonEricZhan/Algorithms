@@ -5,7 +5,7 @@
 
 
 
-list * createnode()//Create the first node point to the null
+list * create_node()//Create the first node point to the null
 {
   list * newnode = malloc(sizeof(list));
   if(!newnode) // if the new pointer is null then it is fail to allocate memory
@@ -71,7 +71,7 @@ list* record(char **path,int j,int i,list* first)
     {
          
          first=push(j,i,first);
-         return record(path,j,i-1,first);
+         return record(path,j-1,i,first);
     }
     else if(*(*(path+j)+i)=='D')//diag
     {
@@ -83,7 +83,7 @@ list* record(char **path,int j,int i,list* first)
     {
          
          first=push(j,i,first);
-         return record(path,j-1,i,first);
+         return record(path,j,i-1,first);
     }
     else
     {
