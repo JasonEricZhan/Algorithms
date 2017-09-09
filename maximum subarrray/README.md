@@ -16,9 +16,14 @@ The normal solution 2 3 4 -1 -2 11 is illegal, so the answer is 11
 
 The first input is the number of elements in the array(array's size)
 
-So solving the problem 2 3 4 -1 -2 11 -7, typing the array of numbers below:
+So solving the problem 2 3 4 -1 -2 11 -7, the interface is as below:
+
+Enter the number of elements:(no more than 6 bit length):
 
 7
+
+Enter      7 integars no more than 6 bit length :
+
 2 3 4 -1 -2 11 -7
 
 <b>Output:</b>
