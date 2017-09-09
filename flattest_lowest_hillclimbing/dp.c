@@ -14,24 +14,24 @@ float min(float a,float b)//return minimum value
 
 int slope_check(int col,int row) //check slope
 {
-    if(i==1 && j==0) 
+    if(row==1 && col==0) 
     {
         return true;
     }
-    else if(i==0 && j==0) //the starting point
+    else if(row==0 && col==0) //the starting point
     {
         return true;
     }
-    else if(i==0 && j==1) //prevent zero diviser,so make default 
+    else if(row==0 && col==1) //prevent zero diviser,so make default 
     {
         return false;
     }
-    else if(i==0)  //prevent zero diviser,so make default 
+    else if(row==0)  //prevent zero diviser,so make default 
     {
         return false;
     }
     //The rule of global path
-    else if((j/i)>=1/2&&(j/i)<=2)
+    else if((col/row)>=1/2&&(col/row)<=2)
     {
         return true;
     }
@@ -54,11 +54,11 @@ void dp(int length,float **cost,float **height,char **path)
    
     //initialize,(0,0) and (0,1~n) and (1~n,0),
     *(*(cost+0)+0)=0+*(*(height+0)+0);
-    *(*(path+0)+0)='O';   //because it's the starting point so is O
-    *(*(cost+0)+1)=*(*(cost+0)+0)+diff(0,1,0,0,height)+*(*(height+0)+1);
-    *(*(path+0)+1)='H';
-    *(*(cost+1)+0)=*(*(cost+0)+0)+diff(1,0,0,0,height)+*(*(height+1)+0);
-    *(*(path+1)+0)='V';
+    *(*(path+0)+0)='O';   //because it's the starting point so is 0
+    *(*(cost+0)+1)=*(*(cost+0)+0)+diff(0,0,0,1,height)+*(*(height+0)+1);
+    *(*(path+0)+1)='V';
+    *(*(cost+1)+0)=*(*(cost+0)+0)+diff(0,0,1,0,height)+*(*(height+1)+0);
+    *(*(path+1)+0)='H';
     for(int i=2;i<length;i++)
     {
        *(*(cost+i)+0)=INT_MAX;
@@ -76,10 +76,9 @@ void dp(int length,float **cost,float **height,char **path)
            
                 if(slope_check(j,i))//check the global constraint(slope) first
                 {
-                    //use three variable to save the value of three direction temporary
                     float diag=*(*(cost+j-1)+i-1)+1.4*diff(j,i,j-1,i-1,height);
-                    float horizon=*(*(cost+j)+i-1)+diff(j,i,j,i-1,height);
-                    float vertical=*(*(cost+j-1)+i)+diff(j,i,j-1,i,height);
+                    float horizon=*(*(cost+j-1)+i)+diff(j,i,j-1,i,height);
+                    float vertical=*(*(cost+j)+i-1)+diff(j,i,j,i-1,height);
                     
                     /*prevent some uncertain issue made by INT_MAX adding with other numbers
                     Ex:INT_MAX+INT_MAX<0 ,INT_MAX+integar<0 at sometimes*/
@@ -133,7 +132,7 @@ void dp(int length,float **cost,float **height,char **path)
                 else//the point which we pass by it's illegal
                 {
                     *(*(cost+j)+i)=INT_MAX;
-                    *(*(path+j)+i)=0;
+                    *(*(path+j)+i)='X';
                     
                 }
            
