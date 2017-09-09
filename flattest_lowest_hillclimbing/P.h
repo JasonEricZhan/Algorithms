@@ -2,8 +2,8 @@
 
 typedef struct node
 {//Use single link list to build the stack to record the data
-  int col;  //record j
-  int row;  //record i
+  int col;  
+  int row;  
   struct node*next;
 }list;
 
