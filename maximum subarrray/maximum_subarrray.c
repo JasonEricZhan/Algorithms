@@ -19,7 +19,7 @@ struct subarray
 
 struct subarray merge(int arr[], int left, int mid, int right);
 struct subarray max(struct subarray a, struct subarray b);
-struct subarray divede(int arr[], int left, int right);
+struct subarray divide(int arr[], int left, int right);
 
 
 int main(void)
@@ -49,11 +49,11 @@ int main(void)
         
     }
     
-    struct subarray max_sum =maxdivede(array, 1, n);
-    printf("from%6d",max_sum.left);
-    printf("to%6d\n",max_sum.right);
-    printf("sum is %6d\n",max_sum.sum);
-    for(int i=max_sum.left;i<=max_sum.right;i++)
+    struct subarray max_subarray =divide(array, 1, n);
+    printf("from%6d",max_subarray.left);
+    printf("to%6d\n",max_subarray.right);
+    printf("sum is %6d\n",max_subarray.sum);
+    for(int i=max_subarray.left;i<=max_subarray.right;i++)
     {
         printf("%6d",array[i]);
     }
@@ -70,7 +70,7 @@ struct subarray max(struct subarray a, struct subarray b)
 }
 
 
-struct subarray divede(int *arr, int left, int right)
+struct subarray divide(int *arr, int left, int right)
 {
     
     if (left == right)
@@ -87,7 +87,7 @@ struct subarray divede(int *arr, int left, int right)
     /* return maximum sum :
      a) maximum subarray sum in left half and maximum subarray sum in right half
      b) maximum subarray sum such that the subarray crosses the mid(like merge the two part) */
-    return  max(   max(  divede(arr, left, mid),divede(arr, mid+1, right)   ),   merge(arr, left, mid, right)  );
+    return  max(   max(  divide(arr, left, mid),divide(arr, mid+1, right)   ),   merge(arr, left, mid, right)  );
     
 }
 
