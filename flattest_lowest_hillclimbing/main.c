@@ -22,7 +22,7 @@ int main(int argc, const char * argv[]) {
     int n;
     scanf(" %2i",&n);
     
-    //allocate dynamic array D[n][n]
+    
     float **cost_2D=NULL;
     cost_2D = (float**)malloc(sizeof(float*)*n);//allocate n rows of space to store pointers
     if(!cost_2D )
@@ -40,7 +40,7 @@ int main(int argc, const char * argv[]) {
         }
     }
     
-    //allocate dynamic array P[n][n]
+    
     char **path_2D=NULL;
     path_2D = (char**)malloc(sizeof(char*)*n);//allocate n rows of space to store pointers
     if(!path_2D )
