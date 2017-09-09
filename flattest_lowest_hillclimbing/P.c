@@ -13,8 +13,8 @@ list * create_node()//Create the first node point to the null
     printf("Fail to allocate memory");
     exit(1);//unusual exit out the program
   }
-  newnode->i =-1;
-  newnode->j =-1;
+  newnode->row =-1;
+  newnode->col =-1;
   newnode->next = NULL;
   return newnode;
 }
@@ -22,13 +22,13 @@ list * create_node()//Create the first node point to the null
 
 
 
-list* push(int j,int i,list*first)//push the data into the stack
+list* push(int col,int row,list*first)//push the data into the stack
 {
   list *newnode;
   newnode = malloc(sizeof(list));
   //Put the new data
-  newnode->j = j;
-  newnode->i = i;
+  newnode->col = col;
+  newnode->row = row;
   if(!newnode) // if the new pointer is null then it is fail to allocate memory
   {
     printf("Fail to allocate memory");
@@ -43,14 +43,14 @@ list* push(int j,int i,list*first)//push the data into the stack
 }
 
 
-list* pop(int *j,int *i,list *first)//Pop out the record data
+list* pop(int *col,int *row,list *first)//Pop out the record data
 {
   list*t;
   //make temporary pointer point to the first node
   t=first;
   //Copy the data to input pointer's content
-  *j=first->j;
-  *i=first->i;
+  *j=first->col;
+  *i=first->row;
   //The pointer go to next position
   first = first->next;
   free(t);//Free the allocated memory space which t points to
@@ -60,30 +60,30 @@ list* pop(int *j,int *i,list *first)//Pop out the record data
 
 
 
-list* record(char **path,int j,int i,list* first)
+list* record(char **path,int col,int row,list* first)
 {
-    if(j==0 && i==0)
+    if(j==0 && row==0)
     {
-        first=push(j,i,first);
+        first=push(col,row,first);
         return first;
     }
-    else if(*(*(path+j)+i)=='H')//horizon
+    else if(*(*(path+col)+row)=='H')//horizon
     {
          
-         first=push(j,i,first);
-         return record(path,j-1,i,first);
+         first=push(col,row,first);
+         return record(path,col-1,row,first);
     }
-    else if(*(*(path+j)+i)=='D')//diag
+    else if(*(*(path+col)+row)=='D')//diag
     {
          
-         first=push(j,i,first);
-         return record(path,j-1,i-1,first);
+         first=push(col,row,first);
+         return record(path,col-1,row-1,first);
     }
-    else if(*(*(path+j)+i)=='V')//vertical
+    else if(*(*(path+col)+row)=='V')//vertical
     {
          
-         first=push(j,i,first);
-         return record(path,j,i-1,first);
+         first=push(col,row,first);
+         return record(path,col,row-1,first);
     }
     else
     {
