@@ -42,10 +42,10 @@ int slope_check(int col,int row) //check slope
 }
 
 
-float diff(int col1,int row1,int col2,int row2,float **s)
+float diff(int col1,int row1,int col2,int row2,float **height)
 {
-    float a=fabs(*(*(s+col1)+row1)-*(*(s+col2)+row2));
-    return a;
+    float difference=fabs(*(*(height+col1)+row1)-*(*(height+col2)+row2));
+    return difference;
 }
 
 
