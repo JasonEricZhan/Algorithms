@@ -95,7 +95,7 @@ int main(int argc, const char * argv[]) {
     printf("\n");
     //use stack to reverse the order of output
     list *Top=NULL;  //intend to be safe
-    Top=createnode();// create the node
+    Top=create_node();// create the node
     Top=record(path_2D,n-1,n-1,Top);//trace back from end point and return the position of the top of stack
     do
     {
