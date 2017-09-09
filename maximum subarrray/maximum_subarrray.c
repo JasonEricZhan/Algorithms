@@ -17,9 +17,9 @@ struct subarray
     int sum;
 };
 
-struct subarray merge(int arr[], int left, int mid, int right);
+struct subarray merge(int *arr, int left, int mid, int right);
 struct subarray max(struct subarray a, struct subarray b);
-struct subarray divide(int arr[], int left, int right);
+struct subarray divide(int *arr, int left, int right);
 
 
 int main(void)
