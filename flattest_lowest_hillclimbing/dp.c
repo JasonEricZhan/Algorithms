@@ -12,7 +12,7 @@ float min(float a,float b)//return minimum value
     return( (a < b)? a : b); //if a is smaller than b then return a else return b
 }
 
-int slope_check(int j,int i) //check slope
+int slope_check(int col,int row) //check slope
 {
     if(i==1 && j==0) 
     {
@@ -42,9 +42,9 @@ int slope_check(int j,int i) //check slope
 }
 
 
-float diff(int j1,int i1,int j2,int i2,float **s)
+float diff(int col1,int row1,int col2,int row2,float **s)
 {
-    float a=fabs(*(*(s+j1)+i1)-*(*(s+j2)+i2));
+    float a=fabs(*(*(s+col1)+row1)-*(*(s+col2)+row2));
     return a;
 }
 
