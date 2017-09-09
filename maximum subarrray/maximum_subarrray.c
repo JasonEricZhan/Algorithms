@@ -17,9 +17,9 @@ struct data
     int sum;
 };
 
-struct data maxmerge(int arr[], int left, int mid, int right);
+struct data merge(int arr[], int left, int mid, int right);
 struct data max(struct data a, struct data b);
-struct data maxdivede(int arr[], int left, int right);
+struct data divede(int arr[], int left, int right);
 
 
 int main(void)
