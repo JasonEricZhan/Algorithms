@@ -144,7 +144,7 @@ struct subarray merge(int *arr, int left, int mid, int right)
                 else
                 {
                      neg_number_count++;
-                    if(neg_count>1&&(arr[i]<0&&arr[i+1]<0))
+                    if(neg_number_count>1&&(arr[i]<0&&arr[i+1]<0))
                     {
                          start=i+2;
                         
