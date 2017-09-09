@@ -49,8 +49,8 @@ list* pop(int *col,int *row,list *first)//Pop out the record data
   //make temporary pointer point to the first node
   t=first;
   //Copy the data to input pointer's content
-  *j=first->col;
-  *i=first->row;
+  *col=first->col;
+  *row=first->row;
   //The pointer go to next position
   first = first->next;
   free(t);//Free the allocated memory space which t points to
