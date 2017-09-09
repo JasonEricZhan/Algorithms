@@ -24,12 +24,12 @@ int main(void) {
         S_number[i]=static_cast<int>(S_char[i]-'0');  //transform to integar
     }
     cout<<"====="<<endl;
-    BackTrck(S_number,0);
+    backtrack(S_number,0);
     return 0;
 }
 
 template <class T1>
-void  BackTrck( T1 s[],T1 index)
+void  backtrack( T1 s[],T1 index)
 {
     index=static_cast<int>(index);//for security
     if(s[index]==0)//the point is empty
@@ -44,7 +44,7 @@ void  BackTrck( T1 s[],T1 index)
                     output_result(s,the_ith_solution);
                     return;
                 }
-                BackTrck(s,index+1);
+                backtrack(s,index+1);
                 
             }
             if(j==9)//no solution
@@ -63,7 +63,7 @@ void  BackTrck( T1 s[],T1 index)
             output_result(s,the_ith_solution);
             return;
         }
-        BackTrck(s,index+1);//skip,and go to the next one
+        backtrack(s,index+1);//skip,and go to the next one
         
     }
     
