@@ -8,7 +8,7 @@ typedef struct node
 }list;
 
 
-list *createnode();
+list *create_node();
 list *push(int j,int i,list*first);
 list *pop(int *j,int *i,list *first);
 
