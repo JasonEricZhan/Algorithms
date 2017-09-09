@@ -62,7 +62,7 @@ list* pop(int *col,int *row,list *first)//Pop out the record data
 
 list* record(char **path,int col,int row,list* first)
 {
-    if(j==0 && row==0)
+    if(col==0 && row==0)
     {
         first=push(col,row,first);
         return first;
