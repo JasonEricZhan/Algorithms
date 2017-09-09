@@ -197,7 +197,7 @@ struct subarray merge(int *arr, int left, int mid, int right)
         subarray.sum=left_max + right_max;
        
       }
-    return element;//error message
+    return subarray;//error message
     
 }
 
