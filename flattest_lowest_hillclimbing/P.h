@@ -2,14 +2,14 @@
 
 typedef struct node
 {//Use single link list to build the stack to record the data
-  int j;  //record j
-  int i;  //record i
+  int col;  //record j
+  int row;  //record i
   struct node*next;
 }list;
 
 
 list *createnode();
-list *push(int j,int i,list*first);
-list *pop(int *j,int *i,list *first);
+list *push(int col,int row,list*first);
+list *pop(int *col,int *row,list *first);
 
-list *record(char **path,int j,int i,list* first);
+list *record(char **path,int col,int row,list* first);
