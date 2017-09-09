@@ -10,252 +10,197 @@
 #include <limits.h>
 #include<stdlib.h>
 
-int findcrossing(int *arr, int l, int m, int r);
-int max(int a, int b);
-int finddivede(int *arr, int l, int r);
+struct data
+{
+    int right;
+    int left;
+    int sum;
+};
 
-typedef struct node
-{//Use single link list to build the stack to record the data of every maximum subarray
-    int start;  //left endpoind
-    int end;    //right endpoind
-    int sum;//The sum of subarray
-    struct node*next;
-}list;
-
-list *Top;//Pointer points to the top of stack
-list *createnode(int data);
-list *push(int start,int end,int value,list*first);
-list *pop(int *start,int *end ,int *value,list *first);
+struct data maxmerge(int arr[], int left, int mid, int right);
+struct data max(struct data a, struct data b);
+struct data maxdivede(int arr[], int left, int right);
 
 
 int main(void)
 {
-    //Create the first node at the bottom of stack which points to the null and the sum is infinite small
-    Top=createnode(INT_MIN);
-    if(!Top)
-    {
-    	printf("Fail to allocate memory");
-        exit(1);//unusual exit out the program
-    }
-    int n;
+    int n=0;
     do
     {
-        scanf("%3i",&n);
+        printf("Enter the number of elements:(no more than 6 bit length)\n");
+        scanf("%6i",&n);
         getchar();//Prevent wrong input make the inifinite loop
-    }
-    while(n<1||n>999);//no more than 3 bit length
-    int *array;
-    array = malloc(sizeof(int)*(n+1));//dynamica allocate
-    for(int i=1;i<n+1;i++)     //array[1..n]
+        
+    }while(n<1||n>999999);
+    int array[n];
+    int c=n;//Show how many integars need to be tapped in
+    printf("Enter %6i integars no more than 6 bit length : \n",c);
+    for(int i=1;i<n+1;i++)     
     {
-        scanf("%3i",array+i);
-    }
-    int max_sum =finddivede(array, 1, n);
-    printf("\n-----------------------------\n");
-    printf("sum is %3i (for checking )",max_sum);
-    printf("\n-----------------------------\n");
-    int start, end ,value,prev=0;
-    //Declare the variables of recording the position and value of each stack
-    do
-    {
-        Top=pop(&start,&end ,&value,Top);
-        //Pop from the top of stack(changing the variable by calling address)
-        if((value==max_sum)&&(prev!=start))
+        scanf("%12i",&array[i]);
+        c--;
+        while(!(array[i]>-99999&&array[i]<999999))
         {
-            printf("From %3i to %3i(the first element is at 1)\n",start,end);
-            printf("The maximum sum subarray is\n");
-            for(int i=start; i<=end;i++)
-            {
-                printf("%3i ",*(array+i));
-                prev=start;/*Record the previous start point,prevent print the same result twice in the
-                    case of input are all negative numbers */
-            }
-            printf("\n-----------------------------\n");
+            c++;
+            printf("\nEnter %6i integars no more than 6 bit length : \n",c);
+            scanf("%12i",&array[i]);
+            c--;
         }
         
-        
-    }while(Top!=NULL);//If it is not null(not at the bottom of the stack)keep doing pop
-    free(array);
+    }
+    
+    struct data max_sum =maxdivede(array, 1, n);
+    printf("from%6d",max_sum.left);
+    printf("to%6d\n",max_sum.right);
+    printf("sum is %6d\n",max_sum.sum);
+    for(int i=max_sum.left;i<=max_sum.right;i++)
+    {
+        printf("%6d",array[i]);
+    }
+  
     return 0;
     
 }
-
-
-list * createnode(int data)//Create the first node point to the null
-{
-    list * newNode = malloc(sizeof(list));
-    newNode->sum =data;
-    newNode->next = NULL;
-    return newNode;
-}
-
-
-list* push(int start,int end,int value,list*first)//push the data into the stack
-{
-    list *newnode;
-    newnode = malloc(sizeof(list));
-    //Put the new data
-    newnode->start = start;
-    newnode->end = end;
-    newnode->sum= value;
-    if(!newnode) // if the new pointer is null then it is fail to allocate memory
-    {
-        printf("Fail to allocate memory");
-        exit(1);//unusual exit out the program
-    }
-    else
-    {
-        newnode->next=first;//The new node point to the old head of link list
-    }
-    return newnode;//return the new node pointer
     
-}
-
-
-list* pop(int *start,int *end ,int *value,list *first)//Pop out the record data
+struct data max(struct data a, struct data b)
 {
-    list*t;
-    //make temporary pointer point to the first node
-    t=first;
-    //Copy the data to input pointer's content
-    *start=first->start;
-    *end=first->end;
-    *value=first->sum;
-    //The pointer go to next position
-    first = first->next;
-    free(t);//Free the allocated memory space which t points to
-    return first;//return the next node pointer
-}
-
-int max(int a, int b)
-{
-    //which one is bigger ,and return the bigger one
-    return( (a > b)? a : b);
     
+    return( (a.sum > b.sum)? a : b);
+       
 }
 
-//The step of dividing the array to two subarray
-int finddivede(int *arr, int l, int r)
+
+struct data divede(int *arr, int left, int right)
 {
-    // boundary condition: only one element
-    if (l == r)
+    
+    if (left == right)
     {
-        Top=push(l,r,*(arr+l),Top);
-        return *(arr+l);
+        
+        struct data element;
+        element.left=left;
+        element.right=right;
+        element.sum=arr[left];
+        return element;
     }
-    // middle point index
-    int m = (l + r)/2;
+    int mid = (left + right)/2;
     
     /* return maximum sum :
      a) maximum subarray sum in left half and maximum subarray sum in right half
      b) maximum subarray sum such that the subarray crosses the mid(like merge the two part) */
-    
-    
-    return  max(   max(  finddivede(arr, l, m),finddivede(arr, m+1, r)   ),   findcrossing(arr, l, m, r)  );
+    return  max(   max(  divede(arr, left, mid),divede(arr, mid+1, right)   ),   merge(arr, left, mid, right)  );
     
 }
 
 
-
-//The crossing merge step:
-int findcrossing(int *arr, int l, int m, int r)
+    
+struct data merge(int *arr, int left, int mid, int right)
 {
+    struct data element;
     /*To  mantain that only one negetive number can be choose:
     At the merge step,The starting point are m and m+1.
     If they are both negative then return the maxium one of them,else keep going*/
-    if(*(arr+m)<0&&*(arr+m+1)<0)
+    if(arr[mid]<0&&arr[mid+1]<0)
     {
-            if(*(arr+m)==max(*(arr+m),*(arr+m+1))) //Choose the bigger one,and record the data of it
+            if(arr[mid]>arr[mid+1]) 
             {
-                Top=push(m,m,*(arr+m),Top);
+                
+                element.left=left;
+                element.right=right;
+                element.sum=arr[mid];
             }
             else
             {
-                Top=push(m+1,m+1,*(arr+m+1),Top);
+ 
+                element.left=left;
+                element.right=right;
+                element.sum=arr[mid+1];
             }
-            return max(*(arr+m),*(arr+m+1));
+            return element;
     }
     else
     {
-            int start=0,end=0;//Declare the variable record the endpoint of subarray
-//Left size:expand to left
-            int record = 0;  //use variable to record the max sum value
-            /*initialize:set the two values to infinite small,making it comparable
-               1.when it is infinite small means the loop is at the beginning
-               2.when it is not infinite small means the variables  left_max and right_max is the old record
-               */
+            int start=0,end=0;
+            int record = 0;  
+            
             int left_max = INT_MIN;
             int right_max = INT_MIN;
-            int neg_count=0;//Use a negative number's counter to count the negative number when expand the subarray
-            if(*(arr+m)<0||*(arr+m+1)<0)
-            {// If one of mid point number is negative then add one to counter
-                  neg_count++;
-            }
-            for (int i = m; i >= l; i--)
+            int neg_number_count=0;
+            if(arr[mid]<0||arr[mid+1]<0)
             {
-                record = record + *(arr+i);
+                  neg_number_count++;
+            }
+            /*Two case:
+               a)if the first reaching element of maximum subarray then left_max get the element
+               b)if the sum of adding the next value is smaller then the original sum then restore it
+               */
+            for (int i = mid; i >= left; i--)
+            {
+                record = record + arr[i];
                 if (record>=left_max)
-                    //Zero or positive integar is in the new endpoint
                 {
                      left_max = record;
                      start=i;
                 }
                 else
                 {
-                    //Means encounter a negative number and add one to negative number's counter
-                    neg_count++;
-                    if(neg_count>1&&(*(arr+i)<0&&*(arr+i+1)<0))
-                    {//Check if encounter the second one of continuous negative number
+                     neg_number_count++;
+                    if(neg_count>1&&(arr[i]<0&&arr[i+1]<0))
+                    {
                          start=i+2;
-                        //If true then the start of maximum subarray go back two indexes
-                        neg_count=neg_count-2;
-                        //will not get this element so minus two on negative number counter
+                        
+                        neg_number_count=neg_number_count-2;
+                        
                         break;
                     }
-                    else if(neg_count>1&&*(arr+i)<0)//Other case of encounter second negative integar
+                    else if(neg_number_count>1&&arr[i]<0)
                     {
-                        start=i+1;//go back one step
-                        neg_count=neg_count-1;
-                        //will not get this element so minus one on negative number counter
+                        start=i+1;
+                        neg_number_count=neg_number_count-1;
                         break;
                     }
                  }
-             }
-//Right size:expand to right
-            record=0;    //initialize record again
-            for (int i = m+1; i <= r; i++)
+            }
+            record=0;   
+            /*Two case:
+             a)if the first value of maximum subarray then right_max get the first value
+             b)if the sum of adding the next value is smaller then the original sum then restore it
+             */
+            for (int i = mid+1; i <= right; i++)
             {
-                record = record + *(arr+i);
+                record = record + arr[i];
                 if (record>=right_max)
-                    //zero or positive integar is in the new position
                 {
                         right_max = record;
                         end=i;
                 }
                 else
                 {
-                    //Means encounter a negative number and add one to negative number's counter
-                    neg_count++;
-                    if(neg_count>1&&(*(arr+i)<0&&*(arr+i-1)<0))
-                    {//Check if encounter the second one of continuous negative number
+                    neg_number_count++;
+              
+                    if(neg_number_count>1&&(arr[i]<0&&arr[i-1]<0))
+                    {
                          end=i-2;
-                        //If true then the start of maximum subarray go back two indexes
-                        neg_count=neg_count-2;
-                        //will not get this element so minus two on negative number counter
+                        
+                        neg_number_count=neg_number_count-2;
                         break;
                     }
-                    else if(neg_count>1&&*(arr+i)<0)//Other case of encounter second negative integar
+                    else if(neg_number_count>1&&arr[i]<0)
                     {
-                        end=i-1;//go back one step
-                        neg_count=neg_count-1;
-                        //will not get this element so minus one on negative number counter
+                        end=i-1;
+                        neg_number_count=neg_number_count-1;
                         break;
                     }
                  }
              }
-        Top=push(start,end,left_max + right_max,Top);
-        return left_max + right_max;//The final sum result of crossing midpoint maximum subarray
+        element.left=start;
+        element.right=end;
+        element.sum=left_max + right_max;
+        ;
       }
-    return INT_MIN;//error message
+    return element;//error message
     
 }
+
+
+
+
