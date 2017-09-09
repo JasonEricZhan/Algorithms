@@ -1,7 +1,7 @@
 #include <iostream>
 
 template <class T1>
-void BackTrck( T1 s[],T1 index);
+void backtrack( T1 s[],T1 index);
 template <class T2>
 bool promising(const T2 s[],T2 checked_index);
 template <class T3>
@@ -49,8 +49,6 @@ void  backtrack( T1 s[],T1 index)
             }
             if(j==9)//no solution
             {
-                /*initialize to 0,exit this run and go back to the point
-                 of starting this decision*/
                 s[index]=0;
                 return;
             }
