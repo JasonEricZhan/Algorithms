@@ -5,7 +5,7 @@
 
 
 
-list * createnode()//Create the first node point to the null
+list * create_node()//Create the first node point to the null
 {
   list * newnode = malloc(sizeof(list));
   if(!newnode) // if the new pointer is null then it is fail to allocate memory
