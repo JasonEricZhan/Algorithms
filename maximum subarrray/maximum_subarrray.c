@@ -10,16 +10,16 @@
 #include <limits.h>
 #include<stdlib.h>
 
-struct data
+struct subarray
 {
     int right;
     int left;
     int sum;
 };
 
-struct data merge(int arr[], int left, int mid, int right);
-struct data max(struct data a, struct data b);
-struct data divede(int arr[], int left, int right);
+struct subarray merge(int arr[], int left, int mid, int right);
+struct subarray max(struct subarray a, struct subarray b);
+struct subarray divede(int arr[], int left, int right);
 
 
 int main(void)
@@ -49,7 +49,7 @@ int main(void)
         
     }
     
-    struct data max_sum =maxdivede(array, 1, n);
+    struct subarray max_sum =maxdivede(array, 1, n);
     printf("from%6d",max_sum.left);
     printf("to%6d\n",max_sum.right);
     printf("sum is %6d\n",max_sum.sum);
@@ -62,7 +62,7 @@ int main(void)
     
 }
     
-struct data max(struct data a, struct data b)
+struct subarray max(struct subarray a, struct subarray b)
 {
     
     return( (a.sum > b.sum)? a : b);
@@ -70,17 +70,17 @@ struct data max(struct data a, struct data b)
 }
 
 
-struct data divede(int *arr, int left, int right)
+struct subarray divede(int *arr, int left, int right)
 {
     
     if (left == right)
     {
         
-        struct data element;
-        element.left=left;
-        element.right=right;
-        element.sum=arr[left];
-        return element;
+        struct subarray subarray;
+        subarray.left=left;
+        subarray.right=right;
+        subarray.sum=arr[left];
+        return subarray;
     }
     int mid = (left + right)/2;
     
@@ -93,9 +93,9 @@ struct data divede(int *arr, int left, int right)
 
 
     
-struct data merge(int *arr, int left, int mid, int right)
+struct subarray merge(int *arr, int left, int mid, int right)
 {
-    struct data element;
+    struct subarray subarray;
     /*To  mantain that only one negetive number can be choose:
     At the merge step,The starting point are m and m+1.
     If they are both negative then return the maxium one of them,else keep going*/
@@ -104,18 +104,18 @@ struct data merge(int *arr, int left, int mid, int right)
             if(arr[mid]>arr[mid+1]) 
             {
                 
-                element.left=left;
-                element.right=right;
-                element.sum=arr[mid];
+                subarray.left=left;
+                subarray.right=right;
+                subarray.sum=arr[mid];
             }
             else
             {
  
-                element.left=left;
-                element.right=right;
-                element.sum=arr[mid+1];
+                subarray.left=left;
+                subarray.right=right;
+                subarray.sum=arr[mid+1];
             }
-            return element;
+            return subarray;
     }
     else
     {
@@ -192,9 +192,9 @@ struct data merge(int *arr, int left, int mid, int right)
                     }
                  }
              }
-        element.left=start;
-        element.right=end;
-        element.sum=left_max + right_max;
+        subarray.left=start;
+        subarray.right=end;
+        subarray.sum=left_max + right_max;
         ;
       }
     return element;//error message
