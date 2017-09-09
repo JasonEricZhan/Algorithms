@@ -54,7 +54,7 @@ void dp(int length,float **cost,float **height,char **path)
    
     //initialize,(0,0) and (0,1~n) and (1~n,0),
     *(*(cost+0)+0)=0+*(*(height+0)+0);
-    *(*(path+0)+0)='O';   //because it's the starting point so is 0
+    *(*(path+0)+0)='O';   //because it's the starting point so is O
     *(*(cost+0)+1)=*(*(cost+0)+0)+diff(0,1,0,0,height)+*(*(height+0)+1);
     *(*(path+0)+1)='H';
     *(*(cost+1)+0)=*(*(cost+0)+0)+diff(1,0,0,0,height)+*(*(height+1)+0);
