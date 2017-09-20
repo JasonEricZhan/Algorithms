@@ -16,3 +16,8 @@ What I learned from the book , class or otherplace and try to change it to make 
 <b> 4.sudoku: Using Backtracking(DFS) to solve Sudoku problem</b>
 
 *the data is read by a line of string, 0 means empty
+
+<b> 5.n-queen: Using Backtracking(DFS) to solve n-queen problem</b>
+
+*the first queen's position is randomly decided
+
