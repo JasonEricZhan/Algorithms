@@ -38,7 +38,7 @@ int main(void) {
 
 void  back_tracking(int *col,int row,int n)
 {
-    for(int j=0;j<n;j++)
+    for(int j = 0;j<n;j++)
     {
         col[row]=j;
         if(promising(col, row))
@@ -63,7 +63,7 @@ bool promising(const int col[],int checked_index)
 {
     
     bool legal=true;
-    for(int put_index=0;put_index<checked_index;put_index++)
+    for(int put_index = 0;put_index<checked_index;put_index++)
     {
         if(col[put_index]==col[checked_index] ||
            abs(col[checked_index]-col[put_index])==checked_index-put_index)
@@ -78,7 +78,7 @@ template <class T3>
 void output_result(const T3 s[],T3 &the_ith_solution,int n)
 {
     std::cout<<the_ith_solution<<"th solution is"<<std::endl;
-    for(int i=0;i<n;i++)
+    for(int i = 0;i<n;i++)
     {
         int row=i;
         int col=s[i];
