@@ -20,14 +20,13 @@ using namespace std;
 int the_ith_solution=1; //the variable record the solution is ith
 int main(void) {
     int n=0;
-    cout<<"How many queens"<<endl;
+    do{
+    cout<<"How many queens(must bigger than 4)"<<endl;
     cin>>n;
+    }while(n<4);
     srand(time(NULL));
     int col[n];
-    for(int i = 0;i<n;i++)
-    {
-        col[i]=0;
-    }
+    
     col[0]=rand()%n;
     cout<<"==first queen at "<<col[0]+1<<"th column =="<<endl;
     back_tracking(col,1,n);
