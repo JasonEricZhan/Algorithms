@@ -12,6 +12,7 @@
 void  back_tracking(int *col,int row,int n);
 
 bool promising(const int col[],int checked_index);
+
 template <class T3>
 void output_result(const T3 s[],T3 &the_ith_solution,int n);
 
@@ -21,8 +22,10 @@ int the_ith_solution=1; //the variable record the solution is ith
 int main(void) {
     int n=0;
     do{
+        
     cout<<"How many queens(must bigger than 4)"<<endl;
     cin>>n;
+        
     }while(n<4);
     srand(time(NULL));
     int col[n];
