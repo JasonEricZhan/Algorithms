@@ -82,7 +82,7 @@ void output_result(const T3 s[],T3 &the_ith_solution,int n)
     {
         int row=i;
         int col=s[i];
-        for(int j=0;j<n;j++)
+        for(int j = 0;j<n;j++)
         {
             if(i==row && j==col)
             {
