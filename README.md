@@ -1,5 +1,5 @@
 # Algorithms
-What I learned from the book , class or otherplace and add some additional rules or function to the origin problem
+What I learned from the book , class or otherplace and add some additional rules or function to the origin problems
 
 <b>1. Building Heap.c (iteration & recursion)</b>
 
