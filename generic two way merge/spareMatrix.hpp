@@ -27,7 +27,7 @@ class spMatrix
 public:
     spMatrix(){capacity=0;term_num=0;};
     template <size_t d0, size_t d1>
-    spMatrix(int (&arr)[d0][d1]);//It's extra constructor
+    spMatrix(int (&arr)[d0][d1]);
     spMatrix(int capacity_num,int row_num,int col_num,int terms){
             smArray=new matrixTerm[capacity_num];
             capacity=capacity_num;
@@ -40,8 +40,8 @@ public:
     
     int getCapacity(){return capacity;};
     
-    int getRows(){return rows;}; //how many rows of the matrix
-    int getCols(){return cols;};//how many  columns of the matrix
+    int getRows(){return rows;}; 
+    int getCols(){return cols;};
     int getTerms(){return term_num;};
     
        
@@ -50,7 +50,7 @@ public:
     spMatrix mul(spMatrix b);
     
 
-    ~spMatrix(){};//delete smArray;};
+    ~spMatrix(){};
     
     
 private:
@@ -60,7 +60,7 @@ private:
     int sum;
 };
 
-//for another way to use in dense matrix transform to sparematrix
+
 template <size_t d0, size_t d1>
 spMatrix::spMatrix(int (&arr)[d0][d1])
 {
