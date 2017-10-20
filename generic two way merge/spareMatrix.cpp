@@ -130,8 +130,9 @@ spMatrix spMatrix::mul(spMatrix b)
         //matrix a  by row major,matrix b by column major, operation is a*b
         while(aPtr<term_num)
         {
-            while(bPtr<=bTerms)
-            {   if(aPtr>=aPtrbound[la] or bPtr>=bPtrbound[lb])//end of row
+            while(bPtr<=bTerms)    
+            {   
+                if(aPtr>=aPtrbound[la] or bPtr>=bPtrbound[lb])
                 {
                     newMatrix.storeSum(sum,currRow,currCol);
                     sum=0;
