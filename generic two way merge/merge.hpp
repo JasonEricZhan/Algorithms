@@ -17,10 +17,9 @@ class list
 {
 public:
     list(){capacity=0;};
-    //set the boundary and starter first
     list(int lb_num,int rb_num,int ls_num,int rs_num)
     {
-        if(lb_num>ls_num and rb_num>rs_num)//for safety
+        if(lb_num>ls_num and rb_num>rs_num)
         {
           leftBoundary=lb_num;
           rightBoundary=rb_num;
@@ -37,7 +36,7 @@ public:
         capacity=capacity_num;
         output=new int[capacity];
         ith=ith_num;
-        if(lb_num>ls_num and rb_num>rs_num)//for safety
+        if(lb_num>ls_num and rb_num>rs_num)
         {
           leftBoundary=lb_num;
           rightBoundary=rb_num;
@@ -58,8 +57,8 @@ public:
     int get_rPtr(){//get the right pointer
         return rightPtr;
     };
-    void assignValue(int num){output[ith]=num;ith++;} //assign a new value
-    int  pop_array(int ptr){ return output[ptr];}  //show the element in ptr position(means ptr point to the element)
+    void assignValue(int num){output[ith]=num;ith++;} ;
+    int  pop_array(int ptr){ return output[ptr];} ;
     ~list(){};
     
 private:
