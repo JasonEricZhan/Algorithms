@@ -166,7 +166,7 @@ spMatrix spMatrix::mul(spMatrix b)
             currCol=colbsmArray[0].col;
             bPtr=0;
         }
-        
+        delete []colbsmArray;
         if(newMatrix.getCapacity()>newMatrix.getTerms())//clean out some unnecessary space
         {
             matrixTerm* newSmArray=newMatrix.getArray();
