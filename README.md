@@ -21,3 +21,4 @@ What I learned from the book , class or otherplace and add some additional rules
 
 *the first queen's position is randomly decided
 
+<b> 6.generic two way merge: use same code to do the computation
