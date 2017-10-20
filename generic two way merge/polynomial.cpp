@@ -55,7 +55,6 @@ void newTerm_wrapper(int &selfPtr,int &pPtr,term *self,term *p,poly &newp,int fl
     }
 }
 
-//store it to the std function, then can reuse it
 function<void(int &selfPtr,int &pPtr,term *self,term *p,poly &newp,int flag)>poly_func=newTerm_wrapper;
 
 poly poly::add(poly p)
@@ -63,9 +62,9 @@ poly poly::add(poly p)
     term *ptermarray=p.getArray();
     int n=p.getTerms()+term_num;
     poly newpoly(n,0);
-    list polyMerge(term_num,p.getTerms(),0,0);//set the value of starters and boundary
+    list polyMerge(term_num,p.getTerms(),0,0);
     polyMerge.merge(termarray,ptermarray,poly_func,newpoly);
-    if(newpoly.getCapacity()>newpoly.getTerms())
+    if(newpoly.getCapacity()>newpoly.getTerms())//clean the space
     {
         term *newArray=newpoly.getArray();
         term *temp=new term[newpoly.getTerms()];
