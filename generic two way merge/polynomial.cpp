@@ -75,6 +75,7 @@ poly poly::add(poly p)
         }
         newpoly.setArray(temp,newpoly.getTerms());
         delete [] newArray;
+        newArray=NULL;
     }
     return newpoly;
 }
