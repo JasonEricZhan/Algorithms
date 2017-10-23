@@ -167,6 +167,7 @@ spMatrix spMatrix::mul(spMatrix b)
             bPtr=0;
         }
         delete []colbsmArray;
+        colbsmArray=NULL;
         if(newMatrix.getCapacity()>newMatrix.getTerms())//clean out some unnecessary space
         {
             matrixTerm* newSmArray=newMatrix.getArray();
@@ -178,6 +179,7 @@ spMatrix spMatrix::mul(spMatrix b)
             }
             newMatrix.setArray(temp,newMatrix.getTerms());
             delete [] newSmArray;
+            newSmArray=NULL;
             
         }
         return newMatrix;
