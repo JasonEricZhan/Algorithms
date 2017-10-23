@@ -8,14 +8,12 @@
 
 #include <iostream>
 
-#include "merge.hpp"
-
+#include "merge.hpp"// std is from there
 #include "polynomial.hpp"
 #include "spareMatrix.hpp"
 #include <fstream>
 
 
-using namespace std;
 
 
 void list_wrapper(int &leftPtr,int &rightPtr,int *arr_left,int *arr_right,list &l,int flag)
