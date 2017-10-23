@@ -9,7 +9,6 @@
 #ifndef spareMatrix_hpp
 #define spareMatrix_hpp
 
-#include <stdio.h>
 #include <vector>
 #include "merge.hpp"
 #include <iostream>
