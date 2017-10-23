@@ -8,7 +8,7 @@
 
 #include "spareMatrix.hpp"
 
-using namespace std;
+
 
 inline bool operator<(const matrixTerm a,const matrixTerm b)
 {
