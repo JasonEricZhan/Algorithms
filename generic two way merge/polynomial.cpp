@@ -7,7 +7,7 @@
 //
 
 #include "polynomial.hpp"
-using namespace std;
+
 
 inline bool operator<(const term a,const term b)
 {
