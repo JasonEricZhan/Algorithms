@@ -106,6 +106,7 @@ int main(int argc, const char * argv[]) {
             {
                 cout<<c_arr[i].coef<<"*X^"<<c_arr[i].exp<<endl;
             }
+            delete []c_arr;
             cout<<"==poly==complete=="<<endl;
             cout<<endl;
         
