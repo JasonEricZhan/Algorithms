@@ -5,3 +5,5 @@ share code with two way merge
 
 <b>Output</b>:
 print out all the result
+
+*ps:using different getter and setter between poly and spMatrix
