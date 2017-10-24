@@ -35,6 +35,8 @@ void list_wrapper(int &leftPtr,int &rightPtr,int *arr_left,int *arr_right,list &
 function <void(int &,int &,int *,int *,list &l,int)>list_func=list_wrapper;
 
 
+
+
 using std::ifstream;
 
 int main(int argc, const char * argv[]) {
@@ -83,7 +85,7 @@ int main(int argc, const char * argv[]) {
                 ifile>>a_arr[i].coef;
                 ifile>>a_arr[i].exp;
             }
-            
+            a.setArray(a_arr,n3);
             
             ifile>>n4;
             poly b(n4,n4);
@@ -93,11 +95,12 @@ int main(int argc, const char * argv[]) {
                 ifile>>b_arr[i].coef;
                 ifile>>b_arr[i].exp;
             }
-            
+            b.setArray(b_arr,n4);
+        
             //poly operation :do add
             poly c=a.add(b);
             term* c_arr=c.getArray();
-            for(int i=0;i<c.getTerms();i++)
+            for(int i=0;i<c.getCapacity();i++)
             {
                 cout<<c_arr[i].coef<<"*X^"<<c_arr[i].exp<<endl;
             }
@@ -135,7 +138,8 @@ int main(int argc, const char * argv[]) {
                cout<<"data size not meet"<<endl;
                exit(9);
             }
-            
+            Matrix1.setArray(matrix1,n5);
+        
             ifile>>n6>>d2>>d3;
             spMatrix Matrix2(n6,d2,d3,n6);
             matrixTerm* matrix2=Matrix2.getArray();
@@ -161,7 +165,8 @@ int main(int argc, const char * argv[]) {
                cout<<"data size not meet"<<endl;
                exit(9);
             }
-
+            Matrix2.setArray(matrix2,n6);
+        
             //matrix operation :do mul
             spMatrix Matrix3=Matrix1.mul(Matrix2);
             matrixTerm* matrix3=Matrix3.getArray();
