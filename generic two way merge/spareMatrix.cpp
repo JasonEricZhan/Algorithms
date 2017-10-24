@@ -178,6 +178,7 @@ spMatrix spMatrix::mul(spMatrix b)
                 temp[ptr]=newSmArray[ptr];
             }
             newMatrix.setArray(temp,newMatrix.getTerms());
+            delete []temp;
             delete [] newSmArray;
             newSmArray=NULL;
             
