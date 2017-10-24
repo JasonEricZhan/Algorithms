@@ -38,6 +38,7 @@ public:
         return temp;};
     void setArray(term *arr,int size){
         capacity=size;
+        delete []termarray;
         termarray=new term[capacity];
         for(int i=0;i<capacity;i++)//copy
         {
