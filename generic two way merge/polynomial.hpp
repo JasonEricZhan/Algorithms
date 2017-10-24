@@ -42,8 +42,7 @@ public:
         for(int i=0;i<capacity;i++)//copy
         {
             termarray[i]=arr[i];
-        }
-        delete []temp;};
+        }};
     
     int getCapacity(){return capacity;};
     int getTerms(){return term_num;};
