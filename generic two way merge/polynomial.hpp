@@ -27,7 +27,7 @@ public:
           capacity=capacity_num;
           termarray=new term[capacity];
           term_num=terms;};
-    //safety but waste some space
+    //safety but waste some space and time
     term* getArray(){
         term *temp=new term[capacity];
         for(int i=0;i<capacity;i++)//copy
