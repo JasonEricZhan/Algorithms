@@ -86,7 +86,8 @@ int main(int argc, const char * argv[]) {
                 ifile>>a_arr[i].exp;
             }
             a.setArray(a_arr,n3);
-            
+            delete []a_arr;
+        
             ifile>>n4;
             poly b(n4,n4);
             term* b_arr=b.getArray();
@@ -96,7 +97,8 @@ int main(int argc, const char * argv[]) {
                 ifile>>b_arr[i].exp;
             }
             b.setArray(b_arr,n4);
-        
+            delete []b_arr;
+    
             //poly operation :do add
             poly c=a.add(b);
             term* c_arr=c.getArray();
@@ -138,7 +140,9 @@ int main(int argc, const char * argv[]) {
                cout<<"data size not meet"<<endl;
                exit(9);
             }
-            //Matrix1.setArray(matrix1,n5);
+            Matrix1.setArray(matrix1,n5);
+            delete []matrix1;
+
         
             ifile>>n6>>d2>>d3;
             spMatrix Matrix2(n6,d2,d3,n6);
@@ -165,7 +169,8 @@ int main(int argc, const char * argv[]) {
                cout<<"data size not meet"<<endl;
                exit(9);
             }
-            //Matrix2.setArray(matrix2,n6);
+            Matrix2.setArray(matrix2,n6);
+            delete []matrix2;
         
             //matrix operation :do mul
             spMatrix Matrix3=Matrix1.mul(Matrix2);
@@ -190,6 +195,7 @@ int main(int argc, const char * argv[]) {
                 cout<<" "<<endl;
             }
             cout<<"==spmatrix==complete=="<<endl;
+            delete []matrix3;
 
             ifile.close();
     }
