@@ -28,7 +28,7 @@ public:
           termarray=new term[capacity];
           term_num=terms;};
     
-    //safety but waste some space and time, need to remember to delete outside
+    //safety but waste some time, need to remember to delete outside
     term* getArray(){
         term *temp=new term[capacity];
         for(int i=0;i<capacity;i++)//copy
