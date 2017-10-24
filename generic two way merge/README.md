@@ -6,4 +6,4 @@ share code with two way merge
 <b>Output</b>:
 print out all the result
 
-*ps:using more likely saftey design on setter and getter* 
+*ps:using more likely saftey design on setter and getter, but it spends more time* 
