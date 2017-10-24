@@ -27,11 +27,25 @@ public:
           capacity=capacity_num;
           termarray=new term[capacity];
           term_num=terms;};
-    term* getArray(){return termarray;};
-    void setArray(term *arr,int size){ 
-        termarray=arr;
+    term* getArray(){
+        term *temp=new term[capacity];
+        for(int i=0;i<capacity;i++)//copy
+        {
+            temp[i]=termarray[i];
+        }
+        return temp;};
+    void setArray(term *arr,int size){
         capacity=size;
-        arr=NULL;};//for safety
+        //term* dumper=termarray;
+        termarray=new term[capacity];
+        term *temp=new term[capacity];
+        for(int i=0;i<capacity;i++)//copy
+        {
+            temp[i]=arr[i];
+            termarray[i]=temp[i];
+        }
+        delete []temp;};
+    //safety but waste some space
     int getCapacity(){return capacity;};
     int getTerms(){return term_num;};
  
