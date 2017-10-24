@@ -30,7 +30,8 @@ public:
     term* getArray(){return termarray;};
     void setArray(term *arr,int size){ 
         termarray=arr;
-        capacity=size;};
+        capacity=size;
+        arr=NULL;};//for safety
     int getCapacity(){return capacity;};
     int getTerms(){return term_num;};
  
