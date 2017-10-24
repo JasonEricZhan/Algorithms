@@ -38,8 +38,7 @@ public:
         {
             temp[i]=smArray[i];
         }
-        return temp;};
-    
+        return temp;}; 
     void setArray(matrixTerm *arr,int size){
         capacity=size;
         delete []smArray;
