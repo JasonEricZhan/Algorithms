@@ -37,7 +37,7 @@ public:
         smArray=arr;
         capacity=size;
         arr=NULL;};//for safety
-    
+    // fast and save space but not safety as poly's array of getter and setter
     int getCapacity(){return capacity;};
     
     int getRows(){return rows;}; 
