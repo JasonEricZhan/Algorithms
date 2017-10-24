@@ -35,7 +35,8 @@ public:
     matrixTerm* getArray(){return smArray;};
     void setArray(matrixTerm *arr,int size){
         smArray=arr;
-        capacity=size;};
+        capacity=size;
+        arr=NULL;};//for safety
     
     int getCapacity(){return capacity;};
     
