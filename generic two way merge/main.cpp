@@ -138,7 +138,7 @@ int main(int argc, const char * argv[]) {
                cout<<"data size not meet"<<endl;
                exit(9);
             }
-            Matrix1.setArray(matrix1,n5);
+            //Matrix1.setArray(matrix1,n5);
         
             ifile>>n6>>d2>>d3;
             spMatrix Matrix2(n6,d2,d3,n6);
@@ -165,7 +165,7 @@ int main(int argc, const char * argv[]) {
                cout<<"data size not meet"<<endl;
                exit(9);
             }
-            Matrix2.setArray(matrix2,n6);
+            //Matrix2.setArray(matrix2,n6);
         
             //matrix operation :do mul
             spMatrix Matrix3=Matrix1.mul(Matrix2);
