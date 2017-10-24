@@ -32,12 +32,13 @@ public:
             capacity=capacity_num;
             rows=row_num;cols=col_num;term_num=terms;};
     
+    // fast and save space but not safety as poly's array of getter and setter
     matrixTerm* getArray(){return smArray;};
     void setArray(matrixTerm *arr,int size){
         smArray=arr;
         capacity=size;
-        arr=NULL;};//for safety
-    // fast and save space but not safety as poly's array of getter and setter
+        arr=NULL;};//for more safety
+    
     int getCapacity(){return capacity;};
     
     int getRows(){return rows;}; 
